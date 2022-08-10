@@ -3,19 +3,24 @@
     <div
       class="bg-image-backs w-screen h-screen bg-no-repeat bg-center bg-cover"
     >
-      <div
-        class="bg-gray-600 h-2/4 w-2/5 rounded-lg ml-auto mr-auto text-white"
-      >
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-        <h1>heloooooo hellllooo</h1>
-      </div>
+    <div class="pt-40">
+
+        <div class=" bg-red-200 h-2/4 w-3/6 rounded-lg ml-auto mr-auto  text-white py-8">
+  
+          <input type="text" placeholder="add a todo" class="text-black"/>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+          <h1>heloooooo hellllooo</h1>
+        </div>
+    </div>
+      
     </div>
   </div>
 </template>
