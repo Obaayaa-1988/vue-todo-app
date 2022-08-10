@@ -2,13 +2,18 @@
   <header>
     <div>
       <nav>
-        <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/">Blog</router-link></li>
-          <li><router-link to="about">About</router-link></li>
+        <ul class="text-center">
+          <li class="inline-block pl-8">
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="inline-block pl-8">
+            <router-link to="/">Blog</router-link>
+          </li>
+          <li class="inline-block pl-8">
+            <router-link to="about">About</router-link>
+          </li>
         </ul>
       </nav>
-      <h1 class="bg-gray-400 w-24 h-14">Hellloooooooo</h1>
     </div>
   </header>
 </template>
@@ -17,4 +22,4 @@
 export default {
   name: "NavBar",
 };
-</script>s
+</script>
