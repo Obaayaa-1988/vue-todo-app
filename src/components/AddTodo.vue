@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name:"addTodo"
+    name:"AddTodo"
 
 }
 </script>

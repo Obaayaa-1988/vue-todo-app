@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!----This where we are transferring the todos array data to the Todolist Component and then transfer to the todoItem component-->
-      <TodoLists :todosArrays="todosArray"/>
+      <TodoLists :todosArray="todosArray"/>
   </div>
 </template>
 
