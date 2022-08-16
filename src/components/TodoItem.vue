@@ -1,9 +1,9 @@
 <template>
   <div>
     <!---using the data passed from the app.vue todos here-->
-    <div class="bg-blue-700 w-2/4 pb-7 pt-7 " >
+    <div class="bg-pink-400 w-2/4 pt-4 pb-4 ml-auto mr-auto md" >
       <div >
-        <p class="bg-white h-2/4 w-2/4 py-2  rounded  " >{{ todoArray.task }} </p>
+        <p class="bg-gray-300 h-2/4 w-2/4 py-2  rounded ml-12 " >{{ todoArray.task }} </p>
   
       </div>
 

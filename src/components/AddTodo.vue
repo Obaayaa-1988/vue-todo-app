@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="bg-black h-2/4 w-2/4 rounded-lg ml-auto mr-auto  ">
-      <h2 class="text-center">My Todolist</h2>
+    <div class="bg-black h-2/4 w-2/4 rounded-lg ml-auto mr-auto">
+      <h2 class="text-center text-white">My Todolist</h2>
 
-      <form @submit="addTask" class="ml-40 pt-16">
+      <form @submit="addTask" class="ml-40 pt-16 md">
         <input
           type="text"
           placeholder="add a todo"
@@ -14,13 +14,9 @@
         <button type="submit" class="bg-blue-700 text-white py-3 px-8 rounded">
           Add
         </button>
-       
       </form>
       <!-- <p>{{listTodo.task}}</p> -->
-      
     </div>
-   
-      
   </div>
 </template>
 
@@ -29,14 +25,12 @@
 
 export default {
   name: "AddTodo",
-//  props: ["listTodo"],
+  //  props: ["listTodo"],
 
   data() {
     return {
       task: "",
     };
-
-    
   },
 
   methods: {
