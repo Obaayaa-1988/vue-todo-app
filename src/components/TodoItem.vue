@@ -1,7 +1,7 @@
 <template>
   <div>
     <!---using the data passed from the app.vue todos here-->
-    <p>{{ todoArray.completed }}</p>
+    <p>{{ todoArray.task }}</p>
   </div>
 </template>
 
