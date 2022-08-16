@@ -2,15 +2,18 @@
   <div id="app">
     <!----This where we are transferring the todos array data to the Todolist Component and then transfer to the todoItem component-->
       <TodoLists :todosArray="todosArray"/>
+      <AddTodo />
   </div>
 </template>
 
 <script>
 import TodoLists from "./components/TodoLists.vue";
+import AddTodo from "./components/AddTodo.vue";
 export default {
   name: "app",
   components: {
     TodoLists,
+    AddTodo
     // register component
   },
   data (){
