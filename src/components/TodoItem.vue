@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-bind:class="{'completed': todoArray.completed}" >
-      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8 border-4 border-l-purple-500 ">
+      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
        <div class="cursor-pointer float-left" v-on:click="markTodo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
