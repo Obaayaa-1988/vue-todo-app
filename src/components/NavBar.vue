@@ -1,21 +1,46 @@
 <template>
-  <header>
-    <div>
-      <nav class="pb-20">
-        <ul class="text-center">
-          <li class="inline-block pl-8 cursor-pointer text-lg">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li class="inline-block pl-8 cursor-pointer ">
-            <router-link to="/">Blog</router-link>
-          </li>
-          <li class="inline-block pl-8 cursor-pointer ">
-            <router-link to="about">About</router-link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div>
+    <header class="flex justify-evenly pb-20 pt-12">
+      <div>
+        <nav>
+          <ul class="text-center">
+            <li class="inline-block pl-8 cursor-pointer text-2xl text-white font-mono
+              "
+            >
+              <router-link to="/">Home</router-link>
+            </li>
+            <li
+              class="
+                inline-block
+                pl-8
+                cursor-pointer
+                text-2xl text-white
+                font-mono
+              "
+            >
+              <router-link to="/">Blog</router-link>
+            </li>
+            <li
+              class="
+                inline-block
+                pl-8
+                cursor-pointer
+                text-2xl text-white
+                font-mono
+              "
+            >
+              <router-link to="about">About</router-link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div>
+        <button  class="bg-white text-black py-3 px-8 rounded">Log In</button>
+        <button class="bg-black text-white py-3 px-8 rounded ml-4" >Sign Up</button>
+      </div>
+    </header>
+  </div>
 </template>
 
 <script>

@@ -5,7 +5,7 @@
 
     <div>
       <ul>
-        <li v-for="todo in todosArray" :key="todo.id" class="text-red-500">
+        <li v-for="todo in todosArray" :key="todo.id" >
           <TodoItem :todoArray="todo" />
         </li>
       </ul>

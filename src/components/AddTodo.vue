@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="bg-purple-300 pb-16 w-2/4 rounded-lg ml-auto mr-auto">
-      <h2 class="text-center text-white">My Todolist</h2>
+    <div class="bg-black pb-16 w-2/4 rounded-lg ml-auto mr-auto">
+      <h2 class="text-center text-white text-2xl pt-8">My Todolist</h2>
 
       <form @submit="addTask" class="ml-40 pt-16 md">
         <input
@@ -43,6 +43,7 @@ export default {
       };
       this.$emit("add-task", newTask);//sending out data to the parent component by creating a custome event
       this.task = " ";
+  
     },
   },
 };
