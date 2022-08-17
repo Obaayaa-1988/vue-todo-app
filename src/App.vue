@@ -1,13 +1,10 @@
 <template>
   <div id="app">
     <!----This where we are transferring the todos array data to the Todolist Component and then transfer to the todoItem component-->
-    <div
-      class="bg-image-backs w-screen h-screen bg-no-repeat bg-center bg-cover">
-    <NavBar />
-
-       <AddTodo v-on:add-task="addTask" />
+    <div class="bg-red-400 w-screen h-screen bg-no-repeat bg-center bg-cover">
+      <NavBar />
+      <AddTodo v-on:add-task="addTask" />
       <TodoLists :todosArray="todosArray" />
-     
     </div>
   </div>
 </template>

@@ -1,9 +1,9 @@
 <template>
   <header>
     <div>
-      <nav>
+      <nav class="pb-20">
         <ul class="text-center">
-          <li class="inline-block pl-8 cursor-pointer">
+          <li class="inline-block pl-8 cursor-pointer text-lg">
             <router-link to="/">Home</router-link>
           </li>
           <li class="inline-block pl-8 cursor-pointer ">
