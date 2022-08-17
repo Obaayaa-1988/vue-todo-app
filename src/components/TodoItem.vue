@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div>
-      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md">{{ todoArray.task }}
-
-        <div class="float-right flex justify-center">
-          <div class="cursor-pointer">
+    <div v-bind:class="{'completed': todoArray.completed}" >
+      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
+       <div class="cursor-pointer float-left" v-on:click="markTodo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mr-7"
+              class="h-6 w-6 mr-7 text-green-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -17,12 +15,15 @@
                 clipRule="evenodd"
               />
             </svg>
-          </div>
+          </div> 
+        {{ todoArray.task }}
 
-          <div>
+        <div class="float-right flex justify-center">
+          
+          <div class="cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mr-12"
+              class="h-6 w-6 mr-12 text-red-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -39,10 +40,7 @@
       </div>
     </div>
 
-    <!---using the data passed from the app.vue todos here-->
-    <!-- <div class="bg-white w-2/4 pt-4 pb-4 ml-auto mr-auto md shadow-md">
-      
-    </div> -->
+
   </div>
 </template>
 
@@ -54,8 +52,23 @@ export default {
   //data from the app.vue sent to todolist.vue now to todoitem component prop drilling data from grandmother to mother to child
   //
   props: ["todoArray"],
+  data() {
+    return {
+      tasks: this.todoArray,
+    };
+  },
+
+  methods: {
+    markTodo() {
+      this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
+.completed {
+    text-decoration: line-through;
+  }
+
 </style>
