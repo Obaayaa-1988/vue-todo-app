@@ -4,7 +4,7 @@
       <div>
         <nav>
           <ul class="text-center">
-            <li class="inline-block pl-8 cursor-pointer text-2xl text-white font-mono font-semibold
+            <li class="inline-block pl-8 cursor-pointer text-2xl text-white font-mono 
               "
             >
               <router-link to="/">Home</router-link>
@@ -16,7 +16,7 @@
                 cursor-pointer
                 text-2xl text-white
                 font-mono
-                font-semibold
+                
               "
             >
               <router-link to="/">Blog</router-link>
@@ -28,7 +28,7 @@
                 cursor-pointer
                 text-2xl text-white
                 font-mono
-                font-semibold
+             
               "
             >
               <router-link to="about">About</router-link>
