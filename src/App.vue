@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <!----This where we are transferring the todos array data to the Todolist Component and then transfer to the todoItem component-->
-    <div class="bg-red-300 w-screen h-screen ">
+    <div class="bg-red-300 w-screen h-screen">
       <NavBar />
       <AddTodo v-on:add-task="addTask" />
-      <TodoLists :todosArray="todosArray" />
+      <TodoLists :todosArray="todosArray" v-on:delete-task="deleteTask" />
     </div>
   </div>
 </template>
@@ -35,6 +35,10 @@ export default {
   methods: {
     addTask(newTask) {
       this.todosArray = [...this.todosArray, newTask];
+    },
+
+    deleteTask(taskId) {
+      this.todosArray = this.todosArray.filter(todo => todo.id !== taskId);
     },
   },
 };
