@@ -45,6 +45,8 @@ export default {
       this.$emit("add-task", newTask); //sending out data to the parent component by creating a custome event
       this.task = " ";
     },
+
+    
   },
 };
 </script>

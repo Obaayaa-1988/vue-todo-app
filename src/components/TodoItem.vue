@@ -20,7 +20,7 @@
 
         <div class="float-right flex justify-center">
           
-          <div class="cursor-pointer">
+          <div class="cursor-pointer" @click="$emit('delete-task', todoArray.id)" >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6 mr-12 text-red-400"
@@ -60,6 +60,8 @@ export default {
 
   methods: {
     markTodo() {
+      //this.tasks.completed = true;//we are equating the completed to true because the initial state is false, we additionally want to toggle it b/n true and false by so we equate
+      //it to the !this.task.complete
       this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
     },
   },
