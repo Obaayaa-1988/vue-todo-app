@@ -6,7 +6,7 @@
     <div>
       <ul>
         <li v-for="todo in todosArray" :key="todo.id" >
-          <TodoItem :todoArray="todo" />
+          <TodoItem :todoArray="todo" v-on:delete-task="$emit('delete-task', todo.id)"/>
         </li>
       </ul>
     </div>
