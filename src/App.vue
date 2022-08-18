@@ -26,8 +26,8 @@ export default {
       todosArray: [
         { id: 1, task: "Go to Australia and visit friends", completed: false },
         { id: 2, task: "Go to Canada and visit friends", completed: false },
-        { id: 3, task: "Go to Armsterdam", completed: false },
-        { id: 4, task: "Go to USA", completed: false },
+        // { id: 3, task: "Go to Armsterdam", completed: false },
+        // { id: 4, task: "Go to USA", completed: false },
         // { id: 5, task: "Go to Norway", completed: false },
       ],
     };
