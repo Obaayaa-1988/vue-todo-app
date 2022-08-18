@@ -22,6 +22,7 @@
 
 <script>
 // import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "AddTodo",
@@ -37,7 +38,7 @@ export default {
     addTask(e) {
       e.preventDefault();
       const newTask = {
-        // id: uuid.v4(),
+        id: uuidv4(),
         task: this.task,
         completed: false,
       };
