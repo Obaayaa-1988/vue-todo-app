@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!----This where we are transferring the todos array data to the Todolist Component and then transfer to the todoItem component-->
-    <div class="bg-red-300 w-screen h-screen">
+    <div class="bg-red-300 w-screen min-h-screen overflow-hidden ">
       <NavBar />
       <AddTodo v-on:add-task="addTask" />
       <TodoLists :todosArray="todosArray" v-on:delete-task="deleteTask" />
@@ -26,9 +26,9 @@ export default {
       todosArray: [
         { id: 1, task: "Go to Australia and visit friends", completed: false },
         { id: 2, task: "Go to Canada and visit friends", completed: false },
-        // { id: 3, task: "Go to Armsterdam", completed: false },
-        // { id: 4, task: "Go to USA", completed: false },
-        // { id: 5, task: "Go to Norway", completed: false },
+        { id: 3, task: "Go to Armsterdam", completed: false },
+        { id: 4, task: "Go to USA", completed: false },
+        { id: 5, task: "Go to Norway", completed: false },
       ],
     };
   },
