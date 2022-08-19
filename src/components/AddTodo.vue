@@ -13,7 +13,7 @@
           name="task"
           class="h-12 w-2/3 rounded md outline-none pl-2"
         />
-        <button type="submit" class="bg-pink-500 text-white py-3 px-8 rounded" v-bind:disabled="!task">Add</button>
+        <button type="submit" class="bg-red-300 text-white py-3 px-8 rounded" v-bind:disabled="!task">Add</button>
       </form>
       
     </div>
