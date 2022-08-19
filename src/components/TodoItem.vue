@@ -71,14 +71,17 @@ export default {
   methods: {
     markTodo() {
       //this.tasks.completed = true;//we are equating the completed to true because the initial state is false, we additionally want to toggle it b/n true and false by so we equate
-      //it to the !this.task.complete
+      //it to the !this.task.complete// we give it a v-class and the prop(todoArray.completed) and the class styled to run through the todo if the todo.completed is true
+      //the markTodo method is now added to the icon, div, p , button to be marked as an event v-on
       this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
     },
   },
 };
 
 //for delete todo we create a custom event for it inside todoItem component where we have access to each single todo in our array, we give the name of the event and use the 
-//prop todoArray.id since we are deleting byusing each id of the todo
+//prop todoArray.id since we are deleting by using each id of the todo, the event is then sent to the parent component Todolist and bindand emit on the todoItem component
+//it is then forwarded to the grandparent component app.vue again as an event v-on, a delete method is implemented inside tha app.vue
+//the existing data todosArray is then filtered and a condition giving to meet which todo to delete 
 </script>
 
 <style scoped>
