@@ -47,6 +47,13 @@ export default {
     },
   },
 };
+
+//addtodo component was separately created for adding new todo and new Task ="" added in data and addTask method function was
+//was also implemented. The addTask method is now added to the the form tag and newTask(task) added to the input field using v-model directive
+//the addTask method was then emitted and a custom event created for it, addTodo component is then imported to the grandparent component app.vue, the emmited data(event) is now bind to the
+//addTodo component as an event
+//a new addTask method is created inside app.vue and the array of object(existing data) spread, opened to add the new tasks to it, the array of objects, the new addTask is added to the v-on in the addTodo component
+//
 </script>
 
 <style>

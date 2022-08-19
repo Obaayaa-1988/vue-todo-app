@@ -19,6 +19,12 @@
         {{ todoArray.task }}
 
         <div class="float-right flex justify-center">
+          <div class="cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+</svg>
+          
+          </div>
           
           <div class="cursor-pointer" @click="$emit('delete-task', todoArray.id)" >
             <svg
@@ -36,6 +42,8 @@
               />
             </svg>
           </div>
+
+         
 
           
         </div>
@@ -68,6 +76,9 @@ export default {
     },
   },
 };
+
+//for delete todo we create a custom event for it inside todoItem component where we have access to each single todo in our array, we give the name of the event and use the 
+//prop todoArray.id since we are deleting byusing each id of the todo
 </script>
 
 <style scoped>

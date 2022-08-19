@@ -9,10 +9,16 @@
           <TodoItem
             :todoArray="todo"
             v-on:delete-task="$emit('delete-task', todo.id)"
+          
           />
+          <!-- <TodoItem
+            :todoArray="todo"
+            v-on:delete-task="$emit('delete-task', todo.id)"
+            v-on:edit-task="$emit('edit-task', todo.id)"
+          /> -->
         </li>
       </ul>
-      <p v-if="todosArray.length === 0" class="text-center text-white" >Add Your New todos Here</p>
+      <p v-if="todosArray.length === 0" class="text-center text-white" >No Todos To Display</p>
     </div>
   </div>
 </template>

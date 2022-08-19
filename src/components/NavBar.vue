@@ -4,37 +4,31 @@
       <div>
         <nav>
           <ul class="text-center">
-            <li
-              class="
+            <li class="
                 inline-block
                 pl-8
                 cursor-pointer
                 text-2xl text-white
                 font-mono
-              "
-            >
+              ">
               <router-link to="/">Home</router-link>
             </li>
-            <li
-              class="
+            <li class="
                 inline-block
                 pl-8
                 cursor-pointer
                 text-2xl text-white
                 font-mono
-              "
-            >
+              ">
               <router-link to="/">Blog</router-link>
             </li>
-            <li
-              class="
+            <li class="
                 inline-block
                 pl-8
                 cursor-pointer
                 text-2xl text-white
                 font-mono
-              "
-            >
+              ">
               <router-link to="about">About</router-link>
             </li>
           </ul>
