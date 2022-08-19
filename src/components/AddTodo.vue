@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-red-200 pb-16 w-2/4 rounded-lg ml-auto mr-auto mb-12 md">
-      <h2 class="text-center text-white text-2xl pt-8 font-mono font-extrabold">
+      <h2 class="text-center text-white text-3xl pt-8 font-mono font-extrabold">
         TODO APP
       </h2>
 
@@ -13,7 +13,7 @@
           name="task"
           class="h-12 w-2/3 rounded md outline-none pl-2"
         />
-        <button type="submit" class="bg-red-300 text-white py-3 px-8 rounded" v-bind:disabled="!task">Add</button>
+        <button type="submit" class="bg-red-400 text-white py-3 px-8 rounded" v-bind:disabled="!task">Add</button>
       </form>
       
     </div>

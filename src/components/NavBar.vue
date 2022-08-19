@@ -45,7 +45,7 @@
         <button class="bg-white text-black py-3 px-8 rounded font-mono">
           Log In
         </button>
-        <button class="bg-pink-500 text-white py-3 px-8 rounded ml-4 font-mono">
+        <button class="bg-red-400 text-white py-3 px-8 rounded ml-4 font-mono">
           Sign Up
         </button>
       </div>
