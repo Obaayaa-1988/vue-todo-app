@@ -64,7 +64,8 @@ export default {
   props: ["todoArray"],
   data() {
     return {
-      tasks: this.todoArray,
+      tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
+                            //tasks
     };
   },
 
