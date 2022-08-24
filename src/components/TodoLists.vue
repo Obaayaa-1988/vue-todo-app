@@ -10,7 +10,7 @@
             :todoArray="todo"
             v-on:delete-task="$emit('delete-task', todo.id)"
           
-          />
+          /><!----the delete task event set ont on the parent element of todoItem-->
           <!-- <TodoItem
             :todoArray="todo"
             v-on:delete-task="$emit('delete-task', todo.id)"
