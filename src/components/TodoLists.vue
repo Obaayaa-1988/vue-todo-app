@@ -10,12 +10,7 @@
             :todoArray="todo"
             v-on:delete-task="$emit('delete-task', todo.id)"
           
-          /><!----the delete task event set ont on the parent element of todoItem-->
-          <!-- <TodoItem
-            :todoArray="todo"
-            v-on:delete-task="$emit('delete-task', todo.id)"
-            v-on:edit-task="$emit('edit-task', todo.id)"
-          /> -->
+          />
         </li>
       </ul>
       <p v-if="todosArray.length === 0" class="text-center text-white" >No Todos To Display</p>

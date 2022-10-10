@@ -5,7 +5,7 @@
       <NavBar />
       <AddTodo v-on:add-task="addTask" />
       <TodoLists :todosArray="todosArray" v-on:delete-task="deleteTask" />
-      <!-- <TodoLists :todosArray="todosArray" v-on:delete-task="deleteTask" v-on:edit-task="editTask"/> -->
+      
     </div>
   </div>
 </template>
@@ -14,6 +14,7 @@
 import NavBar from "./components/NavBar.vue";
 import TodoLists from "./components/TodoLists.vue";
 import AddTodo from "./components/AddTodo.vue";
+// import axios from "axios"
 export default {
   name: "app",
   components: {
@@ -22,21 +23,25 @@ export default {
     AddTodo,
     // register component
   },
+
+ 
+
+
   data() {
     return {
       todosArray: [
-        { id: 1, task: "Go to Australia and visit friends", completed: false },
-        { id: 2, task: "Go to Canada and visit friends", completed: false },
-        { id: 3, task: "Go to Armsterdam", completed: false },
-        { id: 4, task: "Go to USA", completed: false },
-        { id: 5, task: "Go to Norway", completed: false },
+        { id: 1, task: "Visit Germany and visit friends", completed: false },
+        { id: 2, task: "Visit Canada and visit friends", completed: false },
+        { id: 3, task: "Visit Armsterdam", completed: false },
+        { id: 4, task: "Visit USA", completed: false },
+        { id: 5, task: "Visit Norway", completed: false },
       ],
     };
   },
   methods: {
     addTask(newTask) {
       this.todosArray = [...this.todosArray, newTask]; //newTask parameter is from the parameter passed for the event(emit) in addTodo Component
-      console.log("jsjjdjjdjjj", newTask);
+      // console.log("jsjjdjjdjjj", newTask);
     },
 
     deleteTask(taskId) {
@@ -44,16 +49,10 @@ export default {
       console.log("mmdmdmmaaamm", taskId)
     },
 
-    // editTask(){
-    //   this.todosArray = [...this.todosArray]
-    // }
+    
   },
 
-  mounted () {
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
-  }
+  
 
 
 };
