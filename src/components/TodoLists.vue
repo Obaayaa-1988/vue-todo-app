@@ -5,33 +5,82 @@
 
     <div>
       <ul>
-        <li v-for="todo in todosArray" :key="todo.id">
+        <li v-for="todo in diners" :key="todo.id">
           <TodoItem
-            :todoArray="todo"
+            :diners="todo"
             v-on:delete-task="$emit('delete-task', todo.id)"
           
           />
         </li>
       </ul>
-      <p v-if="todosArray.length === 0" class="text-center text-white" >No Todos To Display</p>
+      
     </div>
   </div>
 </template>
 
 <script>
 import TodoItem from "./TodoItem.vue";
+import axios from "axios";
 export default {
   name: "TodoList",
   components: {
     TodoItem,
   },
 
-  // props: {
-  //   todosArray: Array,
-  // },
+ 
 
-  props: ["todosArray"],
-};
+
+
+data() {
+        return {
+            diners: new Array(),
+        }
+    },
+
+
+    methods: {
+        // diners: new Array(),
+
+
+        async geting() {
+            try {
+                const response = await axios({
+                    method: 'GET',
+                    url: 'http://localhost:7576/api/task'
+                })
+                if (response) {
+                    this.diners = response.data
+
+                    console.log('heee', response.data)
+                   
+
+                    console.log(this.diners)
+
+
+
+                } else {
+                    console.log('no data')
+                }
+                //    const data = response.data
+                //    console.log(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    },
+    mounted() {
+      
+        console.log('ToDoComponent mounted.');
+        this.geting();
+    }
+}
+
+
+
+
+
+
+
 </script>
 
 <style>
