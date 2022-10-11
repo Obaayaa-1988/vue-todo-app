@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-bind:class="{'completed': todoArray.completed}" >
+    <div v-bind:class="{'completed': todoArray}" >
       <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
        <div class="cursor-pointer float-left" v-on:click="markTodo">
             <svg
@@ -16,7 +16,7 @@
               />
             </svg>
           </div> 
-        {{ todoArray.task }}
+        {{ todoArray }}
 
         <div class="float-right flex justify-center">
           <div class="cursor-pointer">
@@ -64,7 +64,7 @@ export default {
   props: ["todoArray"],
   data() {
     return {
-      tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
+     // tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
                             //tasks
     };
   },
@@ -74,7 +74,7 @@ export default {
       //this.tasks.completed = true;//we are equating the completed to true because the initial state is false, we additionally want to toggle it b/n true and false by so we equate
       //it to the !this.task.complete// we give it a v-class and the prop(todoArray.completed) and the class styled to run through the todo if the todo.completed is true
       //the markTodo method is now added to the icon, div, p , button to be marked as an event v-on
-      this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
+      //this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
     },
   },
 };
