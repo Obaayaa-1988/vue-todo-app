@@ -30,36 +30,20 @@
 
 export default {
   name: "AddTodo",
-  props: ["getTasks"],
+
+  props: ["getTasks"], //gettasks 
 
   data() {
     return {
       id: "",
       task: "",
-
-      // newTask: {
-      //    id: uuidv4(),
-      //   task: this.task,
-      //   completed: false,
-
-      // }
     };
   },
 
-  methods: {
-    // addTask(e) {
-    //   e.preventDefault();
-    //   const newTask = {
-    //     id: uuidv4(),
-    //     task: this.task,
-
-    //   };
-
+  methods: {   
     addTodos() {
-
-
       this.$emit("addTodo", this.task); //sending out data to the parent component by creating a custome event
-      this.task =""
+      this.task =""                      //sending this add todos function to app.vue in the form of(addTodo parameter) because we to add the todos at the parent component
     },
   },
 };

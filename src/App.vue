@@ -4,7 +4,7 @@
     <div class="bg-red-300 w-screen min-h-screen overflow-hidden">
       <NavBar />
       <AddTodo @addTodo="addTodos" />
-      <TodoLists :diners="diners" @deleteTask="deleteATodo" />
+      <TodoLists :diners="diners" @deleteTask="deleteATodo" @cancelTodo="markTodo" />
     </div>
   </div>
 </template>
@@ -30,6 +30,7 @@ export default {
       diners: [],
     };
   },
+
   methods: {
     addTodos(task) {
       console.log(task);
@@ -52,6 +53,7 @@ export default {
         });
     },
 
+
     async fetchingTodos() {
       try {
         const response = await axios({
@@ -67,6 +69,7 @@ export default {
         console.log(error);
       }
     },
+
     async deleteATodo(id) {
       try {
         const response = await axios({
@@ -82,6 +85,26 @@ export default {
         console.log(error);
       }
     },
+
+    async markTodo(id) {
+      try {
+        const response = await axios({
+          method: "PUT",
+          url: `http://localhost:7576/api/task/${id}`,
+        });
+        if (response) {
+          this.diners = this.diners.filter((todo) => todo._id !== id);
+        } else {
+          console.log("no data");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+
+
+
   },
   mounted() {
     this.fetchingTodos();
