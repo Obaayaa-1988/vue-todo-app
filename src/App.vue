@@ -44,7 +44,7 @@ export default {
         .then( (response) => {
           if (response) {
             this.task = " ";
-            this.diners = response.data;
+            // this.diners = response.data;
             this.fetchingTodos();
           }
         })

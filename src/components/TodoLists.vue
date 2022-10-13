@@ -29,9 +29,9 @@ export default {
       this.$emit("deleteTask", id);
     },
 
-    markTodo(id) {
-      this.$emit("cancelTask", id);
-    },
+    // markTodo(id) {
+    //   this.$emit("cancelTask", id);
+    // },
   },
 };
 </script>
