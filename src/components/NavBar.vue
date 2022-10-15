@@ -1,10 +1,12 @@
 <template>
   <div>
-    <header class="flex justify-evenly pb-20 pt-12 ">
+    <header class="flex justify-evenly pb-20 pt-12 sm:px-4 py-2.5">
       <div>
         <nav>
           <ul class="text-center">
-            <li class="inline-block
+            <li
+              class="
+                inline-block
                 pl-8
                 cursor-pointer
                 text-2xl text-white
@@ -40,10 +42,12 @@
       </div>
 
       <div>
-        <button class="bg-white text-black py-3 px-8 rounded font-mono">
+        <button class="bg-white text-black py-3 px-8 rounded font-mono md:px-6">
           Log In
         </button>
-        <button class="bg-red-400 text-white py-3 px-8 rounded ml-4 font-mono">
+        <button
+          class="bg-red-400 text-white py-3 px-8 rounded ml-4 font-mono md:px-6"
+        >
           Sign Up
         </button>
       </div>
