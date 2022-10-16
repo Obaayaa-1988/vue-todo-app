@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-red-200 pb-16 w-2/4 rounded-lg ml-auto mr-auto mb-12 sm">
+    <div class="bg-red-200 pb-16 w-2/4 rounded-lg ml-auto mr-auto mb-12 ">
       <h2 class="text-center text-white text-3xl pt-8 font-mono font-extrabold">
         TODO APP
       </h2>

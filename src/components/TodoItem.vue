@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div >
-      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8" id="completed">
-        <div class="cursor-pointer float-left" @click="markTodo(diners._id)">
+    <div v-bind:class="{'completed': diners.completed}">
+      <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
+        <div class="cursor-pointer float-left" @click="markTodo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-7 text-green-400"
@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "TodoItem",
   components: {},
@@ -57,6 +59,9 @@ export default {
   props: ["diners"],
   data() {
     return {
+      completed: false,
+      id: '',
+      tasks: this.diners
       // tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
       //tasks
     };
@@ -64,12 +69,26 @@ export default {
 
   methods: {
     markTodo(id) {
-      //this.tasks.completed = true;//we are equating the completed to true because the initial state is false, we additionally want to toggle it b/n true and false by so we equate
-      //it to the !this.task.complete// we give it a v-class and the prop(todoArray.completed) and the class styled to run through the todo if the todo.completed is true
-      //the markTodo method is now added to the icon, div, p , button to be marked as an event v-on
-      //this.tasks.completed = !this.tasks.completed;//method for updating the todo from imcompleted to completed by striking through
+    //  console.log(task);
+      axios
+        .put(`http://localhost:7576/api/task/${id}`, {
+          completed: false,
+        }).then( (response) => {
+          
+          if (response) {
+            this.tasks.completed = !this.tasks.completed;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-      this.$emit("cancelTask", id);
+
+
+
+
+
+     
 
     },
 
@@ -86,7 +105,7 @@ export default {
 </script>
 
 <style scoped>
-#completed {
-  /* text-decoration: line-through; */
+.completed {
+  text-decoration: line-through;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header class="flex justify-evenly pb-20 pt-12 sm:px-4 py-2.5">
+    <header class="flex justify-evenly pb-20 pt-12 py-2.5">
       <div>
-        <nav>
-          <ul class="text-center">
+        <nav class="">
+          <ul class="text-center sm:text-center">
             <li
               class="
                 inline-block
@@ -11,6 +11,7 @@
                 cursor-pointer
                 text-2xl text-white
                 font-mono
+                
               "
             >
               <router-link to="/">Home</router-link>
