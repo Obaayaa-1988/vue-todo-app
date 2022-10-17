@@ -25,7 +25,7 @@
                 font-mono
               "
             >
-              <router-link to="/">Blog</router-link>
+              <router-link to="/blog">Blog</router-link>
             </li>
             <li
               class="
@@ -36,7 +36,7 @@
                 font-mono
               "
             >
-              <router-link to="about">About</router-link>
+              <router-link to="/about">About</router-link>
             </li>
           </ul>
         </nav>

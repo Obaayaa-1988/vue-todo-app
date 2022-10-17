@@ -4,7 +4,7 @@
     <div class="bg-red-300 w-screen min-h-screen overflow-hidden">
       <NavBar />
       <AddTodo @addTodo="addTodos" />
-      <TodoLists :diners="diners" @deleteTask="deleteATodo" @cancelTodo="markTodo" />
+      <TodoLists :diners="diners" @deleteTask="deleteATodo"  />
     </div>
   </div>
 </template>
@@ -86,23 +86,7 @@ export default {
       }
     },
 
-    async markTodo(id) {
-      try {
-        const response = await axios({
-          method: "PUT",
-          url: `http://localhost:7576/api/task/${id}`,
-        });
-        if (response) {
-          this.diners = this.diners.filter((todo) => todo._id !== id);
-        } else {
-          console.log("no data");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
-
+    
 
 
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-bind:class="{'completed': diners.completed}">
+    <div :class="{'completed': diners.completed}">
       <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
         <div class="cursor-pointer float-left" @click="markTodo">
           <svg
@@ -61,34 +61,38 @@ export default {
     return {
       completed: false,
       id: '',
-      tasks: this.diners
+      tasks: '',
+      todoTask: []
       // tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
       //tasks
     };
+  },
+
+  mounted(){
+    this.todoTask = this.diners
+
   },
 
   methods: {
     markTodo(id) {
     //  console.log(task);
       axios
-        .put(`http://localhost:7576/api/task/${id}`, {
-          completed: false,
+        .get(`http://localhost:7576/api/task/${id}`, {
+
         }).then( (response) => {
           
           if (response) {
-            this.tasks.completed = !this.tasks.completed;
+             this.todoTask = this.todoTask.filter((todo) => todo._id !== id);
+           
+          } else {
+            axios.put(`http://localhost:7576/api/task/${id}`)
+
+             this.completed = !this.completed;
           }
         })
         .catch((err) => {
           console.log(err);
         });
-
-
-
-
-
-
-     
 
     },
 
