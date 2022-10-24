@@ -2,7 +2,7 @@
   <div>
     <div :class="{'completed': diners.completed}">
       <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
-        <div class="cursor-pointer float-left" @click="markTodo">
+        <div class="cursor-pointer float-left" @click="markTodo(diners._id)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-7 text-green-400"
@@ -49,6 +49,7 @@
 
 <script>
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "TodoItem",
@@ -75,24 +76,24 @@ export default {
 
   methods: {
     markTodo(id) {
-    //  console.log(task);
       axios
         .get(`http://localhost:7576/api/task/${id}`, {
-
+          id: uuidv4(),
+          completed: false,
+      
         }).then( (response) => {
           
           if (response) {
-             this.todoTask = this.todoTask.filter((todo) => todo._id !== id);
-           
+            this.todoTask.completed = !this.todoTask.completed  
           } else {
-            axios.put(`http://localhost:7576/api/task/${id}`)
-
-             this.completed = !this.completed;
+            console.log('hi there')
+               
           }
         })
         .catch((err) => {
           console.log(err);
         });
+        
 
     },
 

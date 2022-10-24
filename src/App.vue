@@ -33,7 +33,7 @@ export default {
 
   methods: {
     addTodos(task) {
-      console.log(task);
+      // console.log(task);
       axios
         .post("http://localhost:7576/api/task", {
           id: uuidv4(),
