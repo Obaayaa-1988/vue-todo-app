@@ -49,7 +49,6 @@
 
 <script>
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "TodoItem",
@@ -62,10 +61,8 @@ export default {
     return {
       completed: false,
       id: '',
-      tasks: '',
-      todoTask: []
       // tasks: this.todoArray,//placed todoArray prop inside an object in data function to prevent mutation of the prop, then we use the key os the object which is
-      //tasks
+      
     };
   },
 
@@ -78,19 +75,16 @@ export default {
     markTodo(id) {
       axios
         .get(`http://localhost:7576/api/task/${id}`, {
-          id: uuidv4(),
           completed: false,
       
-        }).then( (response) => {
-          
+        }).then( (response) => {  
           if (response) {
             this.todoTask.completed = !this.todoTask.completed  
           } else {
             console.log('hi there')
                
           }
-        })
-        .catch((err) => {
+        }) .catch((err) => {
           console.log(err);
         });
         
