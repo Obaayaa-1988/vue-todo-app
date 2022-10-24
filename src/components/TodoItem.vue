@@ -3,6 +3,7 @@
     <div :class="{'completed': diners.completed}">
       <div class="bg-white h-2/4 w-2/4 py-3 rounded m-auto mb-7 md pl-8">
         <div class="cursor-pointer float-left" @click="markTodo(diners._id)">
+        <!-- <div class="cursor-pointer float-left" @click="markTodos(diners._id)"> -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-7 text-green-400"
@@ -67,16 +68,14 @@ export default {
   },
 
   mounted(){
-    this.todoTask = this.diners
+    this.todoTask = this.diners// to correct prop mutation error
 
   },
 
   methods: {
     markTodo(id) {
-      axios
-        .get(`http://localhost:7576/api/task/${id}`, {
-          completed: false,
-      
+      axios.get(`http://localhost:7576/api/task/${id}`, {
+          completed: false, 
         }).then( (response) => {  
           if (response) {
             this.todoTask.completed = !this.todoTask.completed  
@@ -87,9 +86,13 @@ export default {
         }) .catch((err) => {
           console.log(err);
         });
-        
-
     },
+
+    // markTodos(id){
+    //  this.$emit("markTask", id); 
+  
+    // },
+
 
     deleteATodo(id) {
       this.$emit("deleteTask", id);

@@ -5,6 +5,7 @@
       <NavBar />
       <AddTodo @addTodo="addTodos" />
       <TodoLists :diners="diners" @deleteTask="deleteATodo"  />
+      <!-- <TodoLists :diners="diners" @deleteTask="deleteATodo" @markTask="markTodos" /> -->
     </div>
   </div>
 </template>
@@ -28,6 +29,7 @@ export default {
   data() {
     return {
       diners: [],
+      completed: false,
     };
   },
 
@@ -85,6 +87,21 @@ export default {
         console.log(error);
       }
     },
+
+    // markTodos(id){
+    //    axios.get(`http://localhost:7576/api/task/${id}`, {
+    //       completed: false, 
+    //     }).then( (response) => {  
+    //       if (response) {
+    //         this.completed = !this.completed  
+    //       } else {
+    //         console.log('hi there')
+               
+    //       }
+    //     }) .catch((err) => {
+    //       console.log(err);
+    //     });
+    // }
 
     
 

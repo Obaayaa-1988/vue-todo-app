@@ -6,7 +6,8 @@
     <div>
       <ul>
         <li v-for="todo in diners" :key="todo.id">
-          <TodoItem :diners="todo" @deleteTask="deleteATodo"/>
+          <TodoItem :diners="todo" @deleteTask="deleteATodo"  />
+          <!-- <TodoItem :diners="todo" @deleteTask="deleteATodo" @markTask="markTodos" /> -->
         </li>
       </ul>
     </div>
@@ -25,6 +26,12 @@ export default {
   props: ["diners"],
 
   methods: {
+
+    //  markTodos(id){
+    //  this.$emit("markTask", id); 
+  
+    // },
+
     deleteATodo(id) {
       this.$emit("deleteTask", id);
     },
